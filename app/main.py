@@ -31,7 +31,7 @@ def get_bmw(which='2 Serie'):
         client.publish(topic='admin/message/slack', payload="WHOOP BMW!")
         time.sleep(5)
         sys_exit(0)
-    else: 
+    else:
         print("Don't worry, let me try again")
 
 if __name__ == '__main__':
