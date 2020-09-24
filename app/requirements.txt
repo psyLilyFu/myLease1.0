@@ -1,0 +1,4 @@
+requests>=2.22.0
+beautifulsoup4>=4.8.0
+timeloop>=1.0.2
+paho-mqtt>=1.5.1
