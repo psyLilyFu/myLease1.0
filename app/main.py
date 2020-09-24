@@ -19,7 +19,7 @@ def get_bmw(which='2 Serie'):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     text = soup.find_all('div', class_='image-container')
-    print ("2s job current time : {}".format(time.ctime()))
+    print ("300s job current time : {}".format(time.ctime()))
     found_my_car = False  # NOTE: SAD
     for info in text:
         content = info.contents
@@ -31,6 +31,8 @@ def get_bmw(which='2 Serie'):
         client.publish(topic='admin/message/slack', payload="WHOOP BMW!")
         time.sleep(5)
         sys_exit(0)
+    else: 
+        print("Don't worry, let me try again")
 
 if __name__ == '__main__':
     tl.start(block=True)
